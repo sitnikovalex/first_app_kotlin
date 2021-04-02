@@ -20,22 +20,22 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        Toast.makeText(this@MainActivity, "This is onCreate event", Toast.LENGTH_LONG).show()
+        this.showToast("This is onCreate event")
     }
 
     override fun onStart() {
         super.onStart()
-        Toast.makeText(this@MainActivity, "This is onStart event", Toast.LENGTH_LONG).show()
+        this.showToast("This is onStart event")
     }
 
     override fun onStop() {
         super.onStop()
-        Toast.makeText(this@MainActivity, "This is onStop event", Toast.LENGTH_LONG).show()
+        this.showToast("This is onStop event")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Toast.makeText(this@MainActivity, "This is onDestroy event", Toast.LENGTH_LONG).show()
+        this.showToast("This is onDestroy event")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -52,5 +52,9 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun showToast(text: String) {
+        Toast.makeText(this@MainActivity, text, Toast.LENGTH_LONG).show()
     }
 }
